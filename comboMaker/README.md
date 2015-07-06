@@ -29,7 +29,9 @@ keyMap := { "F": "{Right}", "D": "{Down}", "B": "{Left}", "Up": "{Up}"
 ...where **down** means that key is pressed, **up** indicates key release.<br />
 Sending keys is done by **Combo** class using **SendPlay** or **Send** commands as follows:
 ```ahk
+; in case of regular keys
 SendPlay, % v
+; in case down/up commands {s down}{s up} etc.
 Send, % v
 ```
 
