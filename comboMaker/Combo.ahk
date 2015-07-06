@@ -18,6 +18,50 @@ class Combo {
 		; here we store keys that haven't been released, and need to be to not block them by accident
 		; further it's called 'need to release' queue
 		needRelease := {}
+		; if this is true, all key strokes will be shown in Msgbox instead of sent to the program
+		debugKeyStrokes := false
+		
+		sleepCommand(val){
+			val := StrReplace(val,"}","")
+			val := StrReplace(val,"{WAIT ","")
+			if(this.debugKeyStrokes){
+				Msgbox % "Sleep, " . val
+			}
+			else {
+				Sleep % val
+			}
+		}
+		
+		; Sending key stroke to the program
+		invokeKeyStroke(v){
+			    ; Important thing to note!!!
+			    ; WE MUST USE Send instead of SendPlay if we do things like:
+			    ;    Send {f down}
+			    ;    Sleep 3000
+			    ;    Send {f up}
+			    ; because with SendPlay it doesn't work
+			    ; SendPlay must press and release key like this:
+			    ;    SendPlay {f down}{f up}
+			    ; so if we want to stick Sleep 3000 between down and up actions it won't work
+			    ; I don't personally know why is that, couldn't find source of this bug i documentation
+			    ;;;;;;;;;;;
+			    ; Condition below includes situations like: {x down} or {x up}
+			    ; and excludes situations like: {x down}{y down}{x up}{y up} coming from x+y combinations
+			    ; Third parameter makes it case sensitive 
+				if( (InStr(v, " down}", true) && !InStr(v, " up}", true)) || (InStr(v, " up}", true) && !InStr(v, " down}", true))){
+					if(this.debugKeyStrokes) 
+						Msgbox % "Send, " . v
+					else
+						Send % v
+				}
+				else {
+					if(this.debugKeyStrokes)
+						Msgbox % "SendPlay, " . v
+					else
+						SendPlay, % v
+				}
+		}
+		
 		
 		__New(comboString){
 			this.comboString := comboString
@@ -84,17 +128,21 @@ class Combo {
 		}
 		
 		
-		
 		matchHit(hitToChange,hit){
 			FoundPos := RegExMatch(hitToChange, hit . "$")
 			return (FoundPos > 0)
 		}
+		
 		
 		changeHitToKey(hitToChange){
 			 for hit, key in this.keyMap {
 			 		; if this is single key hit
 					if (hitToChange = hit) {
 						return key
+					}
+					; if this is {WAIT 3000} or other number
+					else if (RegExMatch(hitToChange, "{WAIT \d+}") > 0) {
+						return hitToChange
 					}
 					 
 					; if this is combination like: Hold HP+HK
@@ -153,33 +201,25 @@ class Combo {
 			return key
 		}
 		
-		; change things like HP+HK (b+x) => {b down}{x down}{x up}{b up}
+		; change things like HP+HK (b+x) => {b down}{x down}{b up}{x up}
 	    ; which works like push 2 keys together
 		 getKeysCombination(combination){
 		    delim := this.combinationDelimiter
 	    	if(InStr(combination, delim)){
 				outArr := StrSplit(combination, delim)
-				outStr := ""
+				outStrDown := ""
+				outStrUp := ""
 				for key, val in outArr {
 				    val := this.clearKey(val)
-					outStr := outStr . "{" . val . " down}"
+					outStrDown := outStrDown . "{" . val . " down}"
+					outStrUp := outStrUp . "{" . val . " up}"
 				}
-				; array looping in reverse order, poping elements from the end of array				
-				while outArr.Length() > 0 {
-				    val := outArr.Pop()
-				    val := this.clearKey(val)
-					outStr := outStr . "{" . val . " up}"
-				}
-				return outStr
+				return outStrDown . outStrUp 
 			}
+			; nothing changes, return original string
 			return combination
 		 }
 	
-		; Sending key stroke to the program
-		invokeKeyStroke(v){
-			SendPlay, % v
-		}
-		
 		
 		;;;;;;; keys that need to be released if they were not ;;;;;;;;;;
 		;;;;;;; it's a safety measure to prevent locking keys ;;;;;;;;;;;
@@ -201,18 +241,29 @@ class Combo {
 			return this.inArray(key, this.needRelease)
 		}
 		
+		
+		
 		;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 		
 		invoke(){
+			; Critical means that no other threads can interrupt this one until it ends
+			; it is safety measure, because of the SLEEP commands that can hang up hotkey
+			Critical
 			this.setKeysDelay()
 			for key, val in this.comboArr {
-				this.invokeKeyStroke(val)
+				if (RegExMatch(val, "{WAIT \d+}") > 0){
+						this.sleepCommand(val)
+				}
+				else {
+						this.invokeKeyStroke(val)
+				}
 			}
 			; keys that need release
 			for key, val in this.needRelease {
 				this.releaseKey(val)
 			}
 			this.needRelease := {}
+			return
 		}
 		
 		; for debugging purpose

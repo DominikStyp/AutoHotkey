@@ -4,12 +4,12 @@
 ; WARNING! Check if combo hasn't additional spaces around delimiter "," - because it won't work with it
 ; Clear combo looks like this: HP,LP,HK,Hold BL,HK,HK,Release BL
 
-  
+; sweep = 3-4 steps from the opponent
   
           class JohnnyCage extends MKTrilogyCharacter {
                 ;;;;;; combos ;;;;;;;; 
                 ; 27%
-                _combo1 := "HK,LK,HK,LK,LK"
+                _combo1 := "HK,LK,HK,LK,{WAIT 40},LK"
                 ; 19%, 17% for N64
                 _combo2 := "HP,HP,LP,D+LP"
                 ;;;;;; special moves ;;;;;;; 
@@ -67,7 +67,7 @@
                 ; 22%, 21% for N64
                 _combo1 := "HP,HP,B+HP,F+HP"
                 ; 23%, 25% for N64
-                _combo2 := "HK,HK,LK,B+HK"
+                _combo2 := "HK,HK,LK,Hold B,HK,Release B"
                 ; 23%
                 _combo3 := "HK,HK,B+HP,F+HP"
                 ; 21%
@@ -99,9 +99,9 @@
                 ; 18%
                 _combo1 := "HP,HP,LP"
                 ; 19%
-                _combo2 := "HK,HK,B+HK"
+                _combo2 := "HK,HK,Hold B,HK,Release B"
                 ; 30%
-                _combo3 := "HP,HP,HK,HP,HK,B+HK"
+                _combo3 := "HP,HP,HK,HP,HK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Far Bomb Toss
                 _special1 := "Hold LK,F,F,HK"
@@ -144,7 +144,7 @@
                 ; 27%
                 _combo7 := "HK,HK,HP,HP,U+LP"
                 ; 19%
-                _combo8 := "HK,HK,B+HK"
+                _combo8 := "HK,HK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Energy Rings
                 _special1 := "D,F,LP"
@@ -169,13 +169,13 @@
         class Rayden extends MKTrilogyCharacter {
                 ;;;;;; combos ;;;;;;;; 
                 ; 18%
-                _combo1 := "HK,LK,B+HK"
+                _combo1 := "HK,LK,Hold B,HK,Release B"
                 ; 19%, 27% for N64
                 _combo2 := "HP,HP,LP,LP"
                 ; 36%, 31% for N64
                 _combo3 := "HP,HP,LP,F+HP"
                 ; 23%
-                _combo4 := "HK,HK,LK,B+HK"
+                _combo4 := "HK,HK,LK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Lighting Toss
                 _special1 := "D,F+LP"
@@ -186,12 +186,12 @@
                 ; Torpedo
                 _special4 := "B,B,F"
                 ; Shocker
-                _special5 := "Hold HPfor3seconds,Release "
+                _special5 := "Hold HP,{WAIT 3000}"
                 ;;;;;; finishing moves ;;;;; 
                 ; close
-                _fatality1 := "Hold HPfor8seconds,Release "
+                _fatality1 := "Hold HP,{WAIT 8000}"
                 ; close
-                _fatality2 := "Hold LKfor3seconds,Release LK,BL+LKrapidly"
+                _fatality2 := "Hold LK,{WAIT 3000},Release LK,BL+LKrapidly"
                 ; sweep
                 _animality := "D,F,D,HK"
                 _babality := "D,D,Up,HK"
@@ -205,7 +205,7 @@
                 ; 19%
                 _combo1 := "HP,D+LP,D+LP,D+LP"
                 ; 19%
-                _combo2 := "HK,B+HK,B+HK"
+                _combo2 := "HK,Hold B,HK,Release B,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Torpedo
                 ; Can do in air
@@ -228,14 +228,14 @@
                 ; 22%
                 _combo1 := "HP,HP,LP,HP"
                 ; 24%
-                _combo2 := "HK,HK,LK,HK,B+HK"
+                _combo2 := "HK,HK,LK,HK,Hold B,HK,Release B"
                 ; 23%
                 _combo3 := "HK,HK,LP,HP"
                 ;;;;;; special moves ;;;;;;; 
                 ; Mind Control Orb
                 _special1 := "D,F,HP"
                 ; Super Roundhouse Kick
-                _special2 := "B+HK"
+                _special2 := "Hold B,HK,Release B"
                 ; Lighting Grab
                 _special3 := "B,B,HP"
                 ;;;;;; finishing moves ;;;;; 
@@ -253,11 +253,11 @@
         class ShangTsung extends MKTrilogyCharacter {
                 ;;;;;; combos ;;;;;;;; 
                 ; 22%
-                _combo1 := "HP,HP,LP,B+HK"
+                _combo1 := "HP,HP,LP,Hold B,HK,Release B"
                 ; 19%
-                _combo2 := "HK,HK,B+HK"
+                _combo2 := "HK,HK,Hold B,HK,Release B"
                 ; 27%
-                _combo3 := "LK,HP,HP,LP,B+HK"
+                _combo3 := "LK,HP,HP,LP,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Single Fireball
                 _special1 := "B,B+HP"
@@ -283,7 +283,7 @@
         class Kitana extends MKTrilogyCharacter {
                 ;;;;;; combos ;;;;;;;; 
                 ; 23%
-                _combo1 := "HK,HK,LK,B+HK"
+                _combo1 := "HK,HK,LK,Hold B,HK,Release B"
                 ; 25%
                 _combo2 := "HP,HP,B+LP,F+HP"
                 ;;;;;; special moves ;;;;;;; 
@@ -313,20 +313,20 @@
                 ; 19%
                 _combo2 := "HK,D+LP,D+HP"
                 ; 23%
-                _combo3 := "HK,HK,LK,B+HK"
+                _combo3 := "HK,HK,LK,Hold B,HK,Release B"
                 ; 18%
                 _combo4 := "HP,HP,B+LP"
                 ; 22%
                 _combo5 := "HP,HP,D+LP,D+HP"
                 ; 26%
-                _combo6 := "HP,HP,HK,LK,B+HK"
+                _combo6 := "HP,HP,HK,LK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Sword Toss
                 _special1 := "D,B+HP"
                 ; Slice Uppercut
                 _special2 := "D,F+HP"
                 ; Ball Roll
-                _special3 := "Hold LKfor3seconds,Release "
+                _special3 := "Hold LK,{WAIT 3000}"
                 ; Upwards Ball Roll
                 _special4 := "F,D,F+HK"
                 ; Psycho Ball Roll
@@ -358,7 +358,8 @@
                 _combo3 := "LK,LK,HK"
                 ;;;;;; special moves ;;;;;;; 
                 ; Roll Spin
-                _special1 := "Hold BL,360°Release BL"
+                ; 360 changed to D,D+F,F,F+Up,Up,Up+B,B,B+D
+                _special1 := "Hold BL,D,D+F,F,F+Up,Up,Up+B,B,B+D,Release BL"
                 ; Knife Throw
                 _special2 := "Hold BL,B,F"
                 ; Knife Spin
@@ -375,11 +376,11 @@
         class Scorpion extends MKTrilogyCharacter {
                 ;;;;;; combos ;;;;;;;; 
                 ; 24%
-                _combo1 := "HP,HP,HK,B+HK"
+                _combo1 := "HP,HP,HK,Hold B,HK,Release B"
                 ; 23%
                 _combo2 := "HK,HK,LK,LK"
                 ; 18%
-                _combo3 := "HP,HP,U+LP"
+                _combo3 := "HP,HP,Up+LP"
                 ;;;;;; special moves ;;;;;;; 
                 ; Spear
                 _special1 := "B,B,LP"
@@ -410,15 +411,15 @@
         class SubZero extends MKTrilogyCharacter {
                 ;;;;;; combos ;;;;;;;; 
                 ; 26%
-                _combo1 := "HP,HP,LK,HK,B+HK"
+                _combo1 := "HP,HP,LK,HK,Hold B,HK,Release B"
                 ; 18%
-                _combo2 := "HP,HP,B+HK"
+                _combo2 := "HP,HP,Hold B,HK,Release B"
                 ; 19%
-                _combo3 := "HK,HK,B+HK"
+                _combo3 := "HK,HK,Hold B,HK,Release B"
                 ; 23%
-                _combo4 := "HP,HP,LP,B+LK,B+HK,B+HK"
+                _combo4 := "HP,HP,LP,B+LK,Hold B,HK,Release B,Hold B,HK,Release B"
                 ; 22%
-                _combo5 := "HP,HP,LP,B+HK"
+                _combo5 := "HP,HP,LP,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Ice Blast
                 _special1 := "D,F,LP"
@@ -456,9 +457,9 @@
                 ; 19%
                 _combo3 := "HP,HP,U+LP"
                 ; 24%
-                _combo4 := "HP,HP,HK,B+HK"
+                _combo4 := "HP,HP,HK,Hold B,HK,Release B"
                 ; 23%
-                _combo5 := "HK,HK,LK,B+HK"
+                _combo5 := "HK,HK,LK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Spear
                 _special1 := "B,B,LP"
@@ -485,9 +486,9 @@
                 ; 18%
                 _combo1 := "HP,HP,D+LP"
                 ; 21%
-                _combo2 := "HK,HK,B+HK"
+                _combo2 := "HK,HK,Hold B,HK,Release B"
                 ; 24%
-                _combo3 := "HP,HP,HK,B+HK"
+                _combo3 := "HP,HP,HK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Acid Spit
                 _special1 := "F,F,HP"
@@ -517,7 +518,7 @@
         class Jax extends MKTrilogyCharacter {
                 ;;;;;; combos ;;;;;;;; 
                 ; 19%
-                _combo1 := "HK,HK,B+HK"
+                _combo1 := "HK,HK,Hold B,HK,Release B"
                 ; 24%
                 _combo2 := "HP,HP,BL,LP,B+HP"
                 ; 33%
@@ -530,11 +531,11 @@
                 ; Double Shot
                 _special3 := "F,F,B,B,HP"
                 ; Ground Smash
-                _special4 := "Hold LKfor3seconds,Release "
+                _special4 := "Hold LK,{WAIT 3000}"
                 ; Gotcha Grab
                 _special5 := "F,F,LP"
-                ; Quad Slam
-                _special6 := "AfterthrowrepeatedlytapHP"
+                ; Quad Slam - After throw tap HP
+                _special6 := "HP,HP,HP,HP,HP,HP,HP"
                 ; Backbreaker
                 ; in air
                 _special7 := "BL"
@@ -555,7 +556,7 @@
                 ; 28%
                 _combo1 := "HP,HP,HP,LP,B+HP"
                 ; 28%
-                _combo2 := "HK,LK,LK,HK,LK,B+HK"
+                _combo2 := "HK,LK,LK,HK,LK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Energy Wave
                 _special1 := "F,D,B,HK"
@@ -569,12 +570,12 @@
                 ; tap LP for more hits
                 _special4 := "F,F,LP"
                 ; Ground Slam
-                _special5 := "Hold LKfor3seconds,Release LK"
+                _special5 := "Hold LK,{WAIT 3000}"
                 ; Quad Throw
                 _special6 := "ThrowandtapHPrepeatedly"
                 ;;;;;; finishing moves ;;;;; 
                 ; close
-                _fatality1 := "Hold LP,F,F,F,theRelease LP"
+                _fatality1 := "Hold LP,F,F,F,Release LP"
                 _babality := "D,Up,D,Up,LK"
                 ; sweep
                 _friendship := "D,D,Up,Up,LK"
@@ -590,12 +591,12 @@
                 ; 30%
                 _combo3 := "HP,HP,HK,HK,Up+LK,Up+HK"
                 ; 24%
-                _combo4 := "HP,HP,HK,HK,D"
+                _combo4 := "HP,HP,HK,HK,D+F+LK"
                 ; 16%
-                _combo5 := "HK,HK,D"
+                _combo5 := "HK,HK,D+F+LK"
                 ;;;;;; special moves ;;;;;;; 
                 ; Sai Toss
-                _special1 := "Hold HPfor2seconds,Release "
+                _special1 := "Hold HP,{WAIT 2000}"
                 ; Air Kick
                 _special2 := "F,F,LK"
                 ; Ground Roll
@@ -617,9 +618,9 @@
                 ; 15%
                 _combo1 := "HK,HK"
                 ; 22%
-                _combo2 := "HP,HP,HK,B+HK"
+                _combo2 := "HP,HP,HK,Hold B,HK,Release B"
                 ; 26%
-                _combo3 := "HP,HP,HK,HK,B+HK"
+                _combo3 := "HP,HP,HK,HK,Hold B,HK,Release B"
                 ; 18%
                 _combo4 := "HP,HP,D+LP"
                 ;;;;;; special moves ;;;;;;; 
@@ -655,8 +656,8 @@
                 _combo3 := "HP,LK,LK,HK,LK"
                 ; 28%
                 _combo4 := "HP,HP,BL,LK,LK,HK,LK"
-                ; 28%
-                _combo5 := "JumpKick,HighFireball,FlyingKick"
+                ; 28% Jump Kick, High Fireball, Flying Kick
+                _combo5 := "F+U,Hold HK,{WAIT 1500},Release HK,F,F,HP,{WAIT 2000},F,F,HK"
                 ;;;;;; special moves ;;;;;;; 
                 ; High Fireball
                 _special1 := "F,F,HP"
@@ -665,7 +666,7 @@
                 ; Flying Kick
                 _special3 := "F,F,HK"
                 ; Bicycle Kick
-                _special4 := "Hold LKfor3seconds,Release "
+                _special4 := "Hold LK,{WAIT 3000}"
                 ; Super Kick
                 _special5 := "Hold LK,B,F,Release LK"
                 ;;;;;; finishing moves ;;;;; 
@@ -683,9 +684,9 @@
                 ; 22%
                 _combo1 := "HP,HP,D+LP,D+HP"
                 ; 23%
-                _combo2 := "HK,HK,LK,B+HK"
+                _combo2 := "HK,HK,LK,Hold B,HK,Release B"
                 ; 25%
-                _combo3 := "HP,HP,D+LP,LK,HK,B+LK,B+HK"
+                _combo3 := "HP,HP,D+LP,LK,HK,B+LK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; High Boomerang
                 _special1 := "B,F,HP"
@@ -715,11 +716,11 @@
                 ; 25%
                 _combo1 := "HP,HP,LP,F+HP"
                 ; 27%
-                _combo2 := "HK,HK,LK,B+HK"
+                _combo2 := "HK,HK,LK,Hold B,HK,Release B"
                 ; 42%
-                _combo3 := "HP,HP,LP,HK,HK,LK,B+HK"
-                ; 27%
-                _combo4 := "HK,HK,B+HP,B+HPorB+LP"
+                _combo3 := "HP,HP,LP,HK,HK,LK,Hold B,HK,Release B"
+                ; 27% N64 ???
+                _combo4 := "HK,HK,B+HP,B+HP"
                 ;;;;;; special moves ;;;;;;; 
                 ; Ground Stomp
                 _special1 := "B,D,B,HK"
@@ -742,11 +743,11 @@
         class KungLao extends MKTrilogyCharacter {
                 ;;;;;; combos ;;;;;;;; 
                 ; 19%
-                _combo1 := "LK,LK,B+HK"
+                _combo1 := "LK,LK,Hold B,HK,Release B"
                 ; 34%
-                _combo2 := "HP,LP,HP,LP,LK,LK,B+HK"
+                _combo2 := "HP,LP,HP,LP,LK,LK,Hold B,HK,Release B"
                 ; 18%
-                _combo3 := "HP,LK,B+HK"
+                _combo3 := "HP,LK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Hat Toss
                 _special1 := "B,F,LP"
@@ -776,7 +777,7 @@
                 ; 27%
                 _combo1 := "HP,LP,LP,D+LP"
                 ; 30%
-                _combo2 := "HK,LK,HK,HK,B+HK"
+                _combo2 := "HK,LK,HK,HK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Shield Spin
                 ; tap LK to keep spinning
@@ -836,13 +837,13 @@
         class Nightwolf extends MKTrilogyCharacter {
                 ;;;;;; combos ;;;;;;;; 
                 ; 19%
-                _combo1 := "HK,HK,B+HK"
+                _combo1 := "HK,HK,Hold B,HK,Release B"
                 ; 23%
                 _combo2 := "HP,HP,LP,D,F+HP"
                 ; 22%
                 _combo3 := "HP,HP,LP,HK"
                 ; 28%
-                _combo4 := "LK,HP,HP,LP,D,F+HP"
+                _combo4 := "LK,HP,HP,LP,D+F+HP"
                 ; 27%
                 _combo5 := "HK,HP,HP,LP,HK"
                 ;;;;;; special moves ;;;;;;; 
@@ -880,7 +881,7 @@
                 ; 33%
                 _combo4 := "HK,HP,HP,LP,HK"
                 ; 19%
-                _combo5 := "HK,HK,B+HK"
+                _combo5 := "HK,HK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Fireball
                 _special1 := "F,F,LP"
@@ -890,7 +891,7 @@
                 ; Wave Dizzy
                 _special3 := "F,F,F,HP"
                 ; Float
-                _special4 := "B,B,F,HK,pressBLtoland"
+                _special4 := "B,B,F,HK,Hold BL,{WAIT 1000}"
                 ; Double Fireball
                 _special5 := "B,B,F,LP"
                 ;;;;;; finishing moves ;;;;; 
@@ -910,7 +911,7 @@
                 ; 15%
                 _combo1 := "HK,LP"
                 ; 23%
-                _combo2 := "HK,HK,LK,B+HK"
+                _combo2 := "HK,HK,LK,Hold B,HK,Release B"
                 ; 19%
                 _combo3 := "HP,HP,B+LP,D,F,HP"
                 ; 24%
@@ -937,9 +938,9 @@
         class KlassicSubZero extends MKTrilogyCharacter {
                 ;;;;;; combos ;;;;;;;; 
                 ; 26%
-                _combo1 := "HP,HP,LK,B+HK,F+LK"
+                _combo1 := "HP,HP,LK,Hold B,HK,Release B,F+LK"
                 ; 19%
-                _combo2 := "LK,B+HK,F+LK"
+                _combo2 := "LK,Hold B,HK,Release B,F+LK"
                 ; 22%
                 _combo3 := "HP,HP,D+LP,D+HP"
                 ;;;;;; special moves ;;;;;;; 
@@ -981,9 +982,9 @@
                 ; 23%
                 _combo2 := "HK,HP,HP,LP"
                 ; 23%
-                _combo3 := "HK,LK,B+LP,B+HK"
+                _combo3 := "HK,LK,B+LP,Hold B,HK,Release B"
                 ; 19%
-                _combo4 := "HK,LK,B+HK"
+                _combo4 := "HK,LK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Rushing Attack
                 _special1 := "F,F,HK"
@@ -1018,17 +1019,17 @@
                 ; 15%
                 _combo2 := "LK,LK,HP,HP,D+HP"
                 ; 25%
-                _combo3 := "HP,HP,HK,B+HK"
+                _combo3 := "HP,HP,HK,Hold B,HK,Release B"
                 ; 17%
                 _combo4 := "HP,HP,D+LP,D+HP"
                 ; 17%
                 _combo5 := "LK,LK,HP,HP,D+LP,D+HP"
                 ; 18%
-                _combo6 := "LK,LK,HP,HP,HK,B+HK"
+                _combo6 := "LK,LK,HP,HP,HK,Hold B,HK,Release B"
                 ; 18%
-                _combo7 := "HK,LK,B+HK"
+                _combo7 := "HK,LK,Hold B,HK,Release B"
                 ; 24%
-                _combo8 := "HK,LK,HK,B+HK"
+                _combo8 := "HK,LK,HK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Web Spin
                 _special1 := "B,F,LK"

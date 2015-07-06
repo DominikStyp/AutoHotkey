@@ -19,7 +19,8 @@ keyMap := { "F": "{Right}", "D": "{Down}", "B": "{Left}", "Up": "{Up}"
 					, "HK": "s"
 					, "LK": "f"
 					, "BL": "{SPACE}"
-					, "RUN": "g"   }
+					, "RUN": "g"
+					, "PAUSE": "{Enter}"   }
 ```
 **Combo** class will translate this sequence to the following, and send it to the active window:
 ```
@@ -73,6 +74,21 @@ Moves list is copied and parsed from <a href="http://www.mksecrets.net/index.php
 I've done that using my <a href="//github.com/DominikStyp/Ruby-basics/tree/master/MortalKombatTrilogyHTMLParser">Mortal Kombat Trilogy parser</a> written in Ruby,<br />
 Which automatically generates **AHK Classes** that are in above mentioned file.
 
+### My fixes and tips if something doesn't work
+Unfortunatelly there were some problems, that I've encountered during the gameplay.<br />
+For example - I had to change every occurence of **B+HK** to **Hold B,HK,Release B**, <br />
+because otherwise half-spin kick wouldn't work.<br />
+Another example Johnny Cage combo1 which is "HK,LK,HK,LK,LK" I changed to "HK,LK,HK,LK,{WAIT 40},LK",<br />
+since last hit wasn't triggered.<br />
+Hope those tips will help if some combos or other special moves doesn't work.<br />
+
+### Additional features
+Delaying key press can be done by **{WAIT X}** where X = number of miliseconds which script waits before the next action.<br />
+So you can write things like:<br />
+```ahk
+"HK,Hold LP,{WAIT 3000},Release LP"
+```
+
 ### Change typing speed
 To change combo/special/finishing move typing speed, and specifically **delay** and **pressDuration**,<br /> 
 go to file **MKTrilogyKeyboardSettings.ahk** and change the following timings (in miliseconds): <br />
@@ -86,9 +102,6 @@ finishingSettings := { delay: 20,  pressDuration: 30 }
 ```
 ...**delay** is time between key strokes, **pressDuration** is time from press to release the key.
 
-## Issues 
-Currently things that needs to be fixed:
-- Sequences like "Hold HPfor3seconds" (not implemented yet)
 
 ## Where do I find Mortal Kombat Trilogy game ?
 There are several places where you can download it for free, for example <a href="http://www.abandonia.com/en/games/28511/mortal+kombat+trilogy.html">HERE</a> 
