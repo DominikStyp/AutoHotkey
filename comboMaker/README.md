@@ -24,15 +24,13 @@ keyMap := { "F": "{Right}", "D": "{Down}", "B": "{Left}", "Up": "{Up}"
 ```
 **Combo** class will translate this sequence to the following, and send it to the active window:
 ```
-{f down}{Left down}{Left up}{Left down}{Left up}{s down}{s up}{f up}
+{f down}{Left}{Left}s{f up}
 ```
 ...where **down** means that key is pressed, **up** indicates key release.<br />
-Sending keys is done by **Combo**'s method:
+Sending keys is done by **Combo** class using **SendPlay** or **Send** commands as follows:
 ```ahk
-; Sending key stroke to the program
-invokeKeyStroke(v){
-	SendPlay, % v
-}
+SendPlay, % v
+Send, % v
 ```
 
 ## How to install and use?
