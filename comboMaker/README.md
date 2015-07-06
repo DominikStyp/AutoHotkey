@@ -93,12 +93,14 @@ So you can write things like:<br />
 To change combo/special/finishing move typing speed, and specifically **delay** and **pressDuration**,<br /> 
 go to file **MKTrilogyKeyboardSettings.ahk** and change the following timings (in miliseconds): <br />
 ```ahk
-; special moves timings
-comboSettings := { delay: 50,  pressDuration: 40 }
+; delay = Delay between key strokes (miliseconds)
+; pressDuration = Duration of the key press (time between push, and release key) (miliseconds)
 ; combo timings
-specialSettings := { delay: 50,  pressDuration: 50 }
+comboSettings := { delay: 70,  pressDuration: 60 }
+; special moves timings
+specialSettings := { delay: 40,  pressDuration: 50 }
 ; finishing moves timings (fatalities etc)
-finishingSettings := { delay: 20,  pressDuration: 30 }
+finishingSettings := { delay: 60,  pressDuration: 50 }
 ```
 ...**delay** is time between key strokes, **pressDuration** is time from press to release the key.
 
@@ -117,6 +119,8 @@ test := new MKTrilogyCombo("Hold LP,B,F,D,F")
 test.showKeySequence()
 ```
 ...this should show **Msgbox** with respective key sequence
+Another debug feature is variable **debugKeyStrokes** in **Combo** class, if set to **true** - every key stroke will be "alerted" via **Msgbox**,<br />
+instead of sent to the active window (in case of **false** value).
 
 # DONATIONS
 Like my project ?   
