@@ -35,7 +35,7 @@ invokeKeyStroke(v){
 ```
 
 ## How to install and use?
- - Install Autohotkey
+ - Install <a href="http://ahkscript.org/">Autohotkey</a>
  - Run **MKTrilogy.ahk**
  - Choose your character
  - Run **Mortal Kombat Trilogy**
