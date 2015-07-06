@@ -70,6 +70,8 @@ How to define non-standard hotkeys see following links: <br />
 ### Where are characters' moves defined ?
 They are stored in separated classes in file **MKTrilogyCharacters.ahk**.<br />
 Moves list is copied and parsed from <a href="http://www.mksecrets.net/index.php?section=mkt&lang=eng&contentID=4000">THIS SITE</a>.<br />
+I've done that using my <a href="//github.com/DominikStyp/Ruby-basics/tree/master/MortalKombatTrilogyHTMLParser">Mortal Kombat Trilogy parser</a> written in Ruby,<br />
+Which automatically generates **AHK Classes** that are in above mentioned file.
 
 ### Change typing speed
 To change combo/special/finishing move typing speed, and specifically **delay** and **pressDuration**,<br /> 
@@ -83,6 +85,10 @@ specialSettings := { delay: 50,  pressDuration: 50 }
 finishingSettings := { delay: 20,  pressDuration: 30 }
 ```
 ...**delay** is time between key strokes, **pressDuration** is time from press to release the key.
+
+## Issues 
+Currently things that needs to be fixed:
+- Sequences like "Hold HPfor3seconds" (not implemented yet)
 
 ## Where do I find Mortal Kombat Trilogy game ?
 There are several places where you can download it for free, for example <a href="http://www.abandonia.com/en/games/28511/mortal+kombat+trilogy.html">HERE</a> 
