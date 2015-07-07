@@ -37,10 +37,11 @@ Send, % v
 
 ## How to install and use?
  - Install <a href="http://ahkscript.org/">Autohotkey</a>
+ - Download whole **comboMaker** folder using Git (or use "Download ZIP" button <a href="https://github.com/DominikStyp/AutoHotkey">HERE</a>, and unpack)
  - Run **MKTrilogy.ahk**
  - Choose your character
  - Run **Mortal Kombat Trilogy**
- 
+  
  
 ## Configuration
 
