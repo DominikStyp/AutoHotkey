@@ -14,19 +14,27 @@ class MKTrilogyCombo extends Combo{
 		; for combos, special moves, and finishing moves
 		
 		setupSpecificSettings(name){
+		     ; combos
 			 if(InStr(name,"combo")){
 			 	 this.delay := this.comboSettings.delay
 			     this.pressDuration := this.comboSettings.pressDuration
 			 }
+			 ; special moves
 			 else if(InStr(name,"special")){
 			 	 this.delay := this.specialSettings.delay
 			     this.pressDuration := this.specialSettings.pressDuration
 			 }
+			 ; finishing moves
 			 else if(InStr(name,"fatality") OR InStr(name,"brutality") 
 			 		 OR InStr(name,"babality") OR InStr(name,"friendship")
 			 		 OR InStr(name,"animality") OR InStr(name,"stage")){
 			     this.delay := this.finishingSettings.delay
 			     this.pressDuration := this.finishingSettings.pressDuration
+			 }
+			 ; kombat codes
+			 else if(InStr(name,"code")){
+			     this.delay := this.kombatCodesSettings.delay
+			     this.pressDuration := this.kombatCodesSettings.pressDuration
 			 }
 		}
 }

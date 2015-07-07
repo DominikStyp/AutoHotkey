@@ -18,6 +18,8 @@ class MKTrilogyCharacter {
 	  _friendship := ""
 	  _animality := ""
 	  _stage := ""
+	  ; kombat codes are defined in sublasses in following way
+	  _code1 := ""
   
 	  ; Meta function that is called, if called method doesn't exist
 	  __call(aTarget, aParams*) {

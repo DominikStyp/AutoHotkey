@@ -1,5 +1,5 @@
 
-charsList := "Johnny Cage|Noob Saibot|Baraka|Cyrax|Sonya|Rayden|Klassic Rayden|Rain|Shang Tsung|Kitana|Kano|Klassic Kano|Scorpion|Sub-Zero|Human Smoke|Reptile|Jax|Klassic Jax|Mileena|Sektor|Liu Kang|Jade|Sheeva|Kung Lao|Klassic Kung Lao|Smoke|Nightwolf|Sindel|Ermac|Klassic Sub-Zero|Stryker|Kabal|Khameleon|Chameleon|Goro|Shao Kahn|Motaro|Kintaro"
+charsList := "Johnny Cage|Noob Saibot|Baraka|Cyrax|Sonya|Rayden|Klassic Rayden|Rain|Shang Tsung|Kitana|Kano|Klassic Kano|Scorpion|Sub-Zero|Human Smoke|Reptile|Jax|Klassic Jax|Mileena|Sektor|Liu Kang|Jade|Sheeva|Kung Lao|Klassic Kung Lao|Smoke|Nightwolf|Sindel|Ermac|Klassic Sub-Zero|Stryker|Kabal|Khameleon|Chameleon|Goro|Shao Kahn|Motaro|Kintaro|KOMBAT_CODES"
 charSelectedClass := ""
 charSelectedName := ""
 choosedCharacter := {}
