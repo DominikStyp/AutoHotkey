@@ -4,29 +4,13 @@
 
 
 class MKTrilogyCharacter {
-      ; combos
+      ; combos are defined in sublasses in following way
 	  _combo1 := ""
-	  _combo2 := ""
-	  _combo3 := ""
-	  _combo4 := ""
-	  _combo5 := ""
-	  _combo6 := ""
-	  _combo7 := ""
-	  _combo8 := ""
-	  _combo9 := ""
-	  _combo10 := ""
-	  ; special moves
+	  ; special moves are defined in sublasses in following way
 	  _special1 := ""
-	  _special2 := ""
-	  _special3 := ""
-	  _special4 := ""
-	  _special5 := ""
-	  _special6 := ""
-	  _special7 := ""
-	  _special8 := ""
-	  _special9 := ""
-	  _special10 := ""
-	   ; finishing moves
+	  ; for Shang Tsung morphs are defined in following way
+	  _morph1 := ""
+	   ; finishing moves are defined in sublasses in following way
 	  _fatality1 := ""
 	  _fatality2 := ""
 	  _brutality := ""
@@ -34,8 +18,7 @@ class MKTrilogyCharacter {
 	  _friendship := ""
 	  _animality := ""
 	  _stage := ""
-	  
-	  
+  
 	  ; Meta function that is called, if called method doesn't exist
 	  __call(aTarget, aParams*) {
 	        tmpName := "_" . aTarget

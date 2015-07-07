@@ -27,7 +27,7 @@
 					, "HK": "s"
 					, "LK": "f"
 					, "BL": "{SPACE}"
-					, "RUN": "g"
+					, "R": "g"
 					, "PAUSE": "{Enter}"   }
 					
 

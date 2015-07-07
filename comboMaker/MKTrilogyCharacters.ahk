@@ -267,9 +267,81 @@
                 _special3 := "B,B,F,F+HP"
                 ; Triple Ground Fireballs
                 _special4 := "F,F,B,B+LK"
+                
+                ;;;;;;;;;;;;; Morphs ;;;;;;;;;;;;;;;;;
+                ; Noob Saibot
+                _morph1 := "F,D,D,B,HK"
+                ; Kung Lao
+                _morph2 := "R,R,BL,R"
+                ; Baraka
+                _morph3 := "D,D,LK"
+                ; Johnny Cage
+                _morph4 := "B,B,D,LP"
+                ; Nightwolf
+                _morph5 := "Hold BL,Up,Up,Up,Release BL"
+                ; Sonya
+                _morph6 := "D,D,D+R+LP+BL"
+                ; Sindel
+                _morph7 := "B,D,B,LK"
+                ; Rayden
+                _morph8 := "BL,R,BL"
+                ; Ermac
+                _morph9 := "D,D,Up"
+                ; Smoke
+                _morph10 := "F,F,LP"
+                ; Rain
+                _morph11 := "R,BL,LK"
+                ; Cyrax
+                _morph12 := "BL,BL,BL"
+                ; Stryker
+                _morph13 := "F,F,F,HK"
+                ; Scorpion
+                _morph14 := "D,D,F,LP"
+                ; Kabal
+                _morph15 := "LP,BL,HK"
+                ; Reptile
+                _morph16 := "R,BL,BL,HK"
+                ; Kitana
+                _morph17 := "F,D,F,R"
+                ; Jax
+                _morph18 := "F,F,D,LP"
+                ; Kano
+                _morph19 := "F,B,F,BL"
+                ; Sektor
+                _morph20 := "D,F,B,R"
+                ; Mileena
+                _morph21 := "R,BL,HK"
+                ; Liu Kang
+                ; MORPH 360° forward
+                _morph22 := "D,D+B,B,B+Up,Up,Up+F,F,F+D,D"
+                ; Jade
+                _morph23 := "F,F,D,D+BL"
+                ; Sheeva
+                _morph24 := "F,D,F+LK"
+                ; Shao Kahn
+                _morph25 := "B,F,HK"
+                ; Motaro
+                _morph26 := "F,D,B,HP"
+                ; Kintaro
+                _morph27 := "Hold LP,{WAIT 3000},Release LP"
+                ; Goro
+                _morph28 := "B,B,B,LK"
+                ; Classic Sub-Zero
+                _morph29 := "BL,BL,R,R"
+                ; Klassic Kung Lao
+                _morph30 := "B,D,B,HK"
+                ; Klassic Rayden
+                _morph31 := "B,B,F,R"
+                ; Klassic Jax
+                _morph32 := "D,F,B,HK"
+                ; Klassic Kano
+                ; MORPH 360° back
+                _morph33 := "F,F+Up,Up,Up+B,B,B+D,D,D+F,F"
+                ; Human Smoke
+                ; _morph34 := "" ; no info
                 ;;;;;; finishing moves ;;;;; 
                 ; close
-                _fatality1 := "Hold LP,D,F,F,D"
+                _fatality1 := "Hold LP,D,D+F,F,F+D,D"
                 ; close
                 _fatality2 := "Hold LP,R,BL,R,BL"
                 ; close
