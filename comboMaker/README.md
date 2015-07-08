@@ -34,6 +34,9 @@ SendPlay, % v
 ; in case down/up commands {s down}{s up} etc.
 Send, % v
 ```
+Other examples of "translation" process (with Autohotkey commands invocations): <br />
+- "HP+LP,{WAIT 3000},HP,LP" -> SendPlay {a down}{d down}{a up}{d up}, Sleep 3000, SendPlay ad
+- "Hold HP,LP,LP" -> Send {a down}, SendPlay dd, Send {a up}  (here script automatically releases keys that haven't been released in order to prevent locking the key)
 
 ## How to install and use?
  - Install <a href="http://ahkscript.org/">Autohotkey</a>
@@ -72,7 +75,7 @@ How to define non-standard hotkeys see following links: <br />
 ### Where are characters' moves defined ?
 They are stored in separated classes in file **MKTrilogyCharacters.ahk**.<br />
 Moves list is copied and parsed from <a href="http://www.mksecrets.net/index.php?section=mkt&lang=eng&contentID=4000">THIS SITE</a>.<br />
-I've done that using my <a href="//github.com/DominikStyp/Ruby-basics/tree/master/MortalKombatTrilogyHTMLParser">Mortal Kombat Trilogy parser</a> written in Ruby,<br />
+I've done that using my <a href="//github.com/DominikStyp/Ruby-basics/tree/master/MortalKombatTrilogyHTMLParser">Mortal Kombat Trilogy Parser</a> written in Ruby,<br />
 Which automatically generates **AHK Classes** that are in above mentioned file.
 
 ### My fixes and tips if something doesn't work
