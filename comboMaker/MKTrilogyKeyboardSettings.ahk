@@ -22,7 +22,7 @@
 		; combo timings
 		comboSettings := { delay: 70,  pressDuration: 60 }
 		; special moves timings
-		specialSettings := { delay: 40,  pressDuration: 50 }
+		specialSettings := { delay: 50,  pressDuration: 20 }
 		; finishing moves timings (fatalities etc)
 		finishingSettings := { delay: 70,  pressDuration: 50 }
 		; kombat codes must be pressed quickly so lower values are needed

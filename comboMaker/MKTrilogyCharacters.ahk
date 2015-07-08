@@ -1012,14 +1012,14 @@
                 ; 26%
                 _combo1 := "HP,HP,LK,Hold B,HK,Release B,F+LK"
                 ; 19%
-                _combo2 := "LK,Hold B,HK,Release B,F+LK"
+                _combo2 := "LK,Hold B,HK,Release B,Hold F,LK,Release F"
                 ; 22%
-                _combo3 := "HP,HP,D+LP,D+HP"
+                _combo3 := "HP,HP,D+LP,Hold D,HP,Release D"
                 ;;;;;; special moves ;;;;;;; 
                 ; Ice Blast
                 _special1 := "D,F,LP"
                 ; Ice Rain
-                _special2 := "D,F,HP"
+                _special2 := "Hold D,Hold F,Release D,Release F,HP"
                 ; Near Ice Rain
                 _special3 := "D,F,B,HP"
                 ; Far Ice Rain
