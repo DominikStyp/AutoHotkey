@@ -32,6 +32,7 @@ class Combo {
 			}
 		}
 		
+		
 		; Sending key stroke to the program
 		invokeKeyStroke(v){
 			    ; Important thing to note!!!
@@ -64,8 +65,12 @@ class Combo {
 		
 		
 		__New(comboString){
+			Global KeysShouldBeRemapped
 			this.comboString := comboString
 			this.setupArr()
+			if(KeysShouldBeRemapped){
+				this.remapKeysMethod()
+			}
 			this.mapKeys()
 		}
 		
@@ -100,6 +105,33 @@ class Combo {
 			}
 			this.comboArr := outArr
 		}
+		
+		; in case that certain keys should be remapped
+		; this is used for example if characters stands on the other side of the arena
+		; so back becomes forward, and vice versa
+		remapKeysMethod(){
+			     tmp := {}
+			     for move,key in this.keyMap {
+			     	changeTo := ""
+			     	for oldMove, newMove in this.remapKeys {
+			     		if(move = oldMove){
+			     			changeTo := this.keyMap[newMove]
+			     		}
+			     	}
+			     	if (StrLen(changeTo) > 0){
+			     		tmp[move] := changeTo
+			     	}
+			     	else {
+			     		tmp[move] := key
+			     	}
+			     }
+			    this.keyMap := tmp
+			    ; for x,y in this.keyMap {
+			    ;  	Msgbox % x . " : " . y
+			    ; }
+		}
+		
+		
 		
 		; --------- UTILITIES ----------
 		arrayJoin(array, separator){

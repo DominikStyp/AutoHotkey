@@ -24,7 +24,7 @@
 		; special moves timings
 		specialSettings := { delay: 40,  pressDuration: 50 }
 		; finishing moves timings (fatalities etc)
-		finishingSettings := { delay: 60,  pressDuration: 50 }
+		finishingSettings := { delay: 70,  pressDuration: 50 }
 		; kombat codes must be pressed quickly so lower values are needed
 		kombatCodesSettings := { delay: 20,  pressDuration: 10 }
 		; Here we define key map (values in "" are respective keybord keys)
@@ -42,6 +42,9 @@
 					, "P2-HP": "{Numpad4}"
 					, "P2-HK": "{Numpad5}"
 					, "P2-LK": "{Numpad2}" }
+		; In case you've changed sides with your opponent Forward becomes Back, and Back becomes Forward
+		; Hotkey to remap is in hotkey settings file at line:  HotkeysSettings :=  { "`": "remapBackWithForward"
+		remapKeys := { "F":"B", "B": "F" } 
 					
 
 					

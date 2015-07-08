@@ -36,7 +36,9 @@ class MKTrilogyCombo extends Combo{
 			     this.delay := this.kombatCodesSettings.delay
 			     this.pressDuration := this.kombatCodesSettings.pressDuration
 			 }
+			
 		}
+		
 }
 
 ;;;;;; HOW TO DEBUG COMBO KEY SEQUENCE ;;;;;;;;;;;

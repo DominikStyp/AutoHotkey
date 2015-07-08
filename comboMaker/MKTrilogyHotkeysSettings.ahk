@@ -1,6 +1,9 @@
+		; This file is included in MKTrilogyShowGui.ahk
+		
 		; How to define non-standard hotkeys see:
 		; http://ahkscript.org/docs/KeyList.htm
 		; http://ahkscript.org/docs/Hotkeys.htm
+		; https://www.autohotkey.com/docs/commands/_EscapeChar.htm - how to escape special characters
 		
 		; String before colon is a hotkey name
 		; String after colon is a method name that will be invoked while hotkey is pressed
@@ -12,6 +15,11 @@
 		; 4) Semicolon prepending line indicates comment, which isn't evaluated by the Autohotkey
  
 							 ;;;;;;;;;; finishing moves ;;;;;;;;;
+		 ; This is special hotkey that is used to remap keys in combo
+		 ; This is used in case your character changes sides and forward becomes back and vice versa
+		 RemapKeysHotkey := "Numpad0"
+		 
+		 ; Below there are hotkeys for different special/finishing moves and combos
          HotkeysSettings :=  { "F1": "fatality1" 
     						 , "F2": "fatality2"
     						 , "F3": "brutality"
@@ -63,6 +71,23 @@
     						 , "<!8": "code8"
     						 , "<!9": "code9"
     						 , "<!0": "code0" }
+
+; this is global variable for the Combo class, where it checks whether it should remap keys or not
+KeysShouldBeRemapped = 0
+					 
+Hotkey, %RemapKeysHotkey%, RemapFunc
+
+RemapFunc(){
+	Global KeysShouldBeRemapped
+	if(KeysShouldBeRemapped){
+		KeysShouldBeRemapped := false
+	}
+	else {
+		KeysShouldBeRemapped := true
+	}
+	return
+}
+    	
     						 
     						 
     						 

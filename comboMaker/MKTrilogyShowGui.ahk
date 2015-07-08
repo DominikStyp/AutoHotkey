@@ -13,7 +13,6 @@ choosedCharacter := {}
 ; Here I used HwndOutputVar [v1.1.04+] option http://www.autohotkey.com/docs/commands/Gui.htm#Add
 ; Which allows to store field in the variable
 
-
 Gui, Add, Text,, Choose character
 Gui, Add, ListBox, w145 r15 gGetSelectedItem, %charsList%
 Gui, Show, x879 y168 h250 w165, New GUI Window
@@ -36,5 +35,7 @@ GetSelectedItem(){
 	    ; Msgbox, % "You've selected " . charSelectedName
 		return
 }
+
+
 GuiClose:
-ExitApp
+	ExitApp

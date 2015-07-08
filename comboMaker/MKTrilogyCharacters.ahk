@@ -357,7 +357,7 @@
                 ; 23%
                 _combo1 := "HK,HK,LK,Hold B,HK,Release B"
                 ; 25%
-                _combo2 := "HP,HP,B+LP,F+HP"
+                _combo2 := "HP,HP,B+LP,Hold F,HP,Release F"
                 ;;;;;; special moves ;;;;;;; 
                 ; Fan Lift
                 _special1 := "B,B,B,HP"
@@ -391,7 +391,7 @@
                 ; 22%
                 _combo5 := "HP,HP,D+LP,D+HP"
                 ; 26%
-                _combo6 := "HP,HP,HK,LK,Hold B,HK,Release B"
+                _combo6 := "HP,HP,HK,LK,Hold B,Hold HK,Release HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Sword Toss
                 _special1 := "D,B+HP"
