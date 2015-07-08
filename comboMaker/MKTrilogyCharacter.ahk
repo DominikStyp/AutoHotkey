@@ -23,19 +23,21 @@ class MKTrilogyCharacter {
   
 	  ; Meta function that is called, if called method doesn't exist
 	  __call(aTarget, aParams*) {
-	        tmpName := "_" . aTarget
-	        keys := "" . this[tmpName]
-	  	    ;Msgbox % "Keys are: " . keys 
-	  	  	if(StrLen(keys) < 1){
-	  			; Msgbox % "Sorry this character doesn't have this move!"
-	  			return
-	  		}
-	  		c := new MKTrilogyCombo(keys)
-	  		; sets specific timings between key strokes etc. for different types of moves
-	  		c.setupSpecificSettings(aTarget)
-	  		; for debugging you can uncomment following line
-	  		; c.showKeySequence()
-	  		c.invoke()
+		  	if WinActive("ahk_class MK Trilogy") {
+			        tmpName := "_" . aTarget
+			        keys := "" . this[tmpName]
+			  	    ;Msgbox % "Keys are: " . keys 
+			  	  	if(StrLen(keys) < 1){
+			  			; Msgbox % "Sorry this character doesn't have this move!"
+			  			return
+			  		}
+			  		c := new MKTrilogyCombo(keys)
+			  		; sets specific timings between key strokes etc. for different types of moves
+			  		c.setupSpecificSettings(aTarget)
+			  		; for debugging you can uncomment following line
+			  		; c.showKeySequence()
+			  		c.invoke()
+		  	}
 	  }
 	  
 }
