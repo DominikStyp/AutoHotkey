@@ -109,6 +109,13 @@ finishingSettings := { delay: 60,  pressDuration: 50 }
 ...**delay** is time between key strokes, **pressDuration** is time from press to release the key.
 
 
+## Changing forward with back and vice versa
+You've probably ask: "What about special moves if my character stands on the other side of arena?"<br />
+This is where you can use **RemapKeysHotkey** hotkey, which can switch BACK with FORWARD and vice versa<br />
+(You'll find it in **MKTrilogyHotkeysSettings.ahk**).<br />
+Which keys should be remapped you can define in variable **remapKeys** (defined in file **MKTrilogyKeybordSettings.ahk**)
+
+
 ## Where do I find Mortal Kombat Trilogy game ?
 There are several places where you can download it for free, for example <a href="http://www.abandonia.com/en/games/28511/mortal+kombat+trilogy.html">HERE</a> 
 
