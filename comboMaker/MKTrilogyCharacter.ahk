@@ -23,7 +23,6 @@ class MKTrilogyCharacter {
   
 	  ; Meta function that is called, if called method doesn't exist
 	  __call(aTarget, aParams*) {
-		  	if WinActive("ahk_class MK Trilogy") {
 			        tmpName := "_" . aTarget
 			        keys := "" . this[tmpName]
 			  	    ;Msgbox % "Keys are: " . keys 
@@ -37,10 +36,7 @@ class MKTrilogyCharacter {
 			  		; for debugging you can uncomment following line
 			  		; c.showKeySequence()
 			  		c.invoke()
-		  	}
-	  }
-	  
+	  }  
 }
-
 
 

@@ -80,10 +80,12 @@ Hotkey, %RemapKeysHotkey%, RemapFunc
 RemapFunc(){
 	Global KeysShouldBeRemapped
 	if(KeysShouldBeRemapped){
-		KeysShouldBeRemapped := false
+		KeysShouldBeRemapped := 0
+		Tooltip, Left, 0, 42
 	}
 	else {
-		KeysShouldBeRemapped := true
+		KeysShouldBeRemapped := 1
+		Tooltip, Right, 0, 42
 	}
 	return
 }

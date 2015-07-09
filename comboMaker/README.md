@@ -114,7 +114,8 @@ You've probably ask: "What about special moves if my character stands on the oth
 This is where you can use **RemapKeysHotkey** hotkey, which can switch BACK with FORWARD and vice versa<br />
 (You'll find it in **MKTrilogyHotkeysSettings.ahk**).<br />
 Which keys should be remapped you can define in variable **remapKeys** (defined in file **MKTrilogyKeybordSettings.ahk**)
-
+Additionally I've added a tooltip that informs you about current position of your character. <br />
+Tooltip will be displayed in the top-right corner of the Mortal Kombat window, showing "Left" or "Right" info.<br />
 
 ## Where do I find Mortal Kombat Trilogy game ?
 There are several places where you can download it for free, for example <a href="http://www.abandonia.com/en/games/28511/mortal+kombat+trilogy.html">HERE</a> 
