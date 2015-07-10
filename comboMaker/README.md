@@ -82,8 +82,9 @@ Which automatically generates **AHK Classes** that are in above mentioned file.
 Unfortunatelly there were some problems, that I've encountered during the gameplay.<br />
 For example - I had to change every occurence of **B+HK** to **Hold B,HK,Release B**, <br />
 because otherwise half-spin kick wouldn't work.<br />
-Another example Johnny Cage combo1 which is "HK,LK,HK,LK,LK" I changed to "HK,LK,HK,LK,{WAIT 40},LK",<br />
-since last hit wasn't triggered.<br />
+Another examples:<br />
+Johnny Cage combo1 which is "HK,LK,HK,LK,LK" I changed to "HK,LK,HK,LK,{WAIT 40},LK",since last hit wasn't triggered.<br />
+Kano combo6 which is "HP,HP,HK,LK,B+HK" I changed to "HP,HP,HK,LK,{WAIT 100},B+HK", because last half-round kick wasn't triggered.<br />
 Hope those tips will help if some combos or other special moves doesn't work.<br />
 
 ### Additional features
@@ -116,6 +117,8 @@ This is where you can use **RemapKeysHotkey** hotkey, which can switch BACK with
 Which keys should be remapped you can define in variable **remapKeys** (defined in file **MKTrilogyKeybordSettings.ahk**)
 Additionally I've added a tooltip that informs you about current position of your character. <br />
 Tooltip will be displayed in the top-right corner of the Mortal Kombat window, showing "Left" or "Right" info.<br />
+
+
 
 ## Where do I find Mortal Kombat Trilogy game ?
 There are several places where you can download it for free, for example <a href="http://www.abandonia.com/en/games/28511/mortal+kombat+trilogy.html">HERE</a> 

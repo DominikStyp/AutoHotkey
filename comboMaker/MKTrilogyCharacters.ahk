@@ -70,13 +70,11 @@ charsList := "Johnny Cage|Noob Saibot|Baraka|Cyrax|Sonya|Rayden|Klassic Rayden|R
         class Baraka extends MKTrilogyCharacter {
                 ;;;;;; combos ;;;;;;;; 
                 ; 22%, 21% for N64
-                _combo1 := "HP,HP,B+HP,F+HP"
+                _combo1 := "HP,HP,Hold B,HP,Release B,Hold F,HP,Release F"
                 ; 23%, 25% for N64
                 _combo2 := "HK,HK,LK,Hold B,HK,Release B"
                 ; 23%
-                _combo3 := "HK,HK,B+HP,F+HP"
-                ; 21%
-                _combo4 := "HK,HK,B+HP,B+HP,F+HP"
+                _combo3 := "HK,HK,Hold B,HP,Release B,Hold F,HP,Release F"
                 ;;;;;; special moves ;;;;;;; 
                 ; Blade Fury
                 _special1 := "B,B,B,LP"
@@ -109,9 +107,9 @@ charsList := "Johnny Cage|Noob Saibot|Baraka|Cyrax|Sonya|Rayden|Klassic Rayden|R
                 _combo3 := "HP,HP,HK,HP,HK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
                 ; Far Bomb Toss
-                _special1 := "Hold LK,F,F,HK"
+                _special1 := "Hold LK,{WAIT 1000},F,F,HK,Release LK"
                 ; Near Bomb Toss
-                _special2 := "Hold LK,B,B,HK"
+                _special2 := "Hold LK,{WAIT 1000},B,B,HK"
                 ; Teleport
                 ; can be done in air too
                 _special3 := "F,D,BL"
@@ -141,13 +139,13 @@ charsList := "Johnny Cage|Noob Saibot|Baraka|Cyrax|Sonya|Rayden|Klassic Rayden|R
                 ; 27%
                 _combo3 := "HK,HP,HP,LP,B+HP"
                 ; 23%
-                _combo4 := "HK,HP,HP,U+LP"
+                _combo4 := "HK,HP,HP,Up+LP"
                 ; 18%
-                _combo5 := "HP,HP,U+LP"
+                _combo5 := "HP,HP,Up+LP"
                 ; 23%
-                _combo6 := "HK,HP,HP,U+HP"
+                _combo6 := "HK,HP,HP,Up+LP"
                 ; 27%
-                _combo7 := "HK,HK,HP,HP,U+LP"
+                _combo7 := "HK,HK,HP,HP,Up+LP"
                 ; 19%
                 _combo8 := "HK,HK,Hold B,HK,Release B"
                 ;;;;;; special moves ;;;;;;; 
@@ -196,7 +194,7 @@ charsList := "Johnny Cage|Noob Saibot|Baraka|Cyrax|Sonya|Rayden|Klassic Rayden|R
                 ; close
                 _fatality1 := "Hold HP,{WAIT 8000}"
                 ; close
-                _fatality2 := "Hold LK,{WAIT 3000},Release LK,BL+LKrapidly"
+                _fatality2 := "Hold LK,{WAIT 3000},Release LK,BL+LK,BL+LK,BL+LK,BL+LK"
                 ; sweep
                 _animality := "D,F,D,HK"
                 _babality := "D,D,Up,HK"
@@ -245,7 +243,7 @@ charsList := "Johnny Cage|Noob Saibot|Baraka|Cyrax|Sonya|Rayden|Klassic Rayden|R
                 _special3 := "B,B,HP"
                 ;;;;;; finishing moves ;;;;; 
                 ; close
-                _fatality1 := "F,F,D,HP"
+                _fatality1 := "F,F+D,D,HP"
                 ; sweep
                 _fatality2 := "D,D,B,F,HK"
                 ; close
@@ -384,26 +382,26 @@ charsList := "Johnny Cage|Noob Saibot|Baraka|Cyrax|Sonya|Rayden|Klassic Rayden|R
                 _stage := "F,D,D,LK"
         }
         class Kano extends MKTrilogyCharacter {
-                ;;;;;; combos ;;;;;;;; 
-                ; 15%
-                _combo1 := "HK,LP"
-                ; 19%
-                _combo2 := "HK,D+LP,D+HP"
-                ; 23%
-                _combo3 := "HK,HK,LK,Hold B,HK,Release B"
-                ; 18%
-                _combo4 := "HP,HP,B+LP"
+                ;;;;;; combos ;;;;;;;;
                 ; 22%
-                _combo5 := "HP,HP,D+LP,D+HP"
+                _combo1 := "HP,HP,Hold D,LP,Release D,Hold D,HP,Release D"
                 ; 26%
-                _combo6 := "HP,HP,HK,LK,Hold B,Hold HK,Release HK,Release B"
+                _combo2 := "HP,HP,HK,LK,{WAIT 100},B+HK" 
+                ; 19%
+                _combo3 := "HK,Hold D,LP,Release D,Hold D,HP,Release D"
+                ; 23%
+                _combo4 := "HK,HK,LK,Hold B,HK,Release B"
+                ; 18%
+                _combo5 := "HP,HP,B+LP"
+                ; 15%
+                _combo6 := "HK,LP"
                 ;;;;;; special moves ;;;;;;; 
                 ; Sword Toss
                 _special1 := "D,B+HP"
                 ; Slice Uppercut
                 _special2 := "D,F+HP"
                 ; Ball Roll
-                _special3 := "Hold LK,{WAIT 3000}"
+                _special3 := "Hold LK,{WAIT 3000},Release LK"
                 ; Upwards Ball Roll
                 _special4 := "F,D,F+HK"
                 ; Psycho Ball Roll
@@ -532,7 +530,7 @@ charsList := "Johnny Cage|Noob Saibot|Baraka|Cyrax|Sonya|Rayden|Klassic Rayden|R
                 ; 18%
                 _combo2 := "HK,D+LP,D+HP"
                 ; 19%
-                _combo3 := "HP,HP,U+LP"
+                _combo3 := "HP,HP,Up+LP"
                 ; 24%
                 _combo4 := "HP,HP,HK,Hold B,HK,Release B"
                 ; 23%
@@ -734,7 +732,7 @@ charsList := "Johnny Cage|Noob Saibot|Baraka|Cyrax|Sonya|Rayden|Klassic Rayden|R
                 ; 28%
                 _combo4 := "HP,HP,BL,LK,LK,HK,LK"
                 ; 28% Jump Kick, High Fireball, Flying Kick
-                _combo5 := "F+U,Hold HK,{WAIT 1500},Release HK,F,F,HP,{WAIT 2000},F,F,HK"
+                _combo5 := "F+Up,Hold HK,{WAIT 1500},Release HK,F,F,HP,{WAIT 2000},F,F,HK"
                 ;;;;;; special moves ;;;;;;; 
                 ; High Fireball
                 _special1 := "F,F,HP"

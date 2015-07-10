@@ -10,12 +10,13 @@ F11::
 F12::
     ; a = HP, s = HK, d = LP, f = LK, g = Run, Space = Block
     
-    ; Mileena
-    ; HP,HP,Up+LP,D+LP
+    ; Kano
+    ; HP,HP,D+LP,D+HP
+    ; 22% 4 hit
 	SendPlay, a
 	SendPlay, a
-	SendPlay, {Up down}{d down}{Up up}{d up}
 	SendPlay, {Down down}{d down}{Down up}{d up}
+	SendPlay, {Down down}{a down}{Down up}{a up}
 	return
 	
 Esc::

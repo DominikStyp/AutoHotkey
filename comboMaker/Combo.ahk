@@ -173,11 +173,13 @@ class Combo {
 						return key
 					}
 					; if this is {WAIT 3000} or other number
+					; this becomes SLEEP 3000
 					else if (RegExMatch(hitToChange, "{WAIT \d+}") > 0) {
 						return hitToChange
 					}
 					 
 					; if this is combination like: Hold HP+HK
+					; this becomes: Hold HP, Hold HK
 					else if(InStr(hitToChange,this.combinationDelimiter) AND RegExMatch(hitToChange, hit) > 0 AND InStr(hitToChange,"Hold")){
 						   tmpArr := StrSplit(hitToChange, this.combinationDelimiter)
 						   tmpOutArr := {}
@@ -192,18 +194,26 @@ class Combo {
 					}
 					
 					; if this is combination like HP+HK
+					; this becomes: Hold HP, Hold HK, Release HP, Release HK
 					else if(InStr(hitToChange,this.combinationDelimiter) AND this.matchHit(hitToChange,hit)){
 						   tmpArr := StrSplit(hitToChange, this.combinationDelimiter)
 						   tmpOutArr := {}
-						   for k, tmpHit in tmpArr { 
+						   for k, tmpHit in tmpArr {
+						   		tmpHit := "Hold " . tmpHit 
 						   		tmpOutArr.Push(this.changeHitToKey(tmpHit))
 						   }
-						   combination := this.arrayJoin(tmpOutArr,this.combinationDelimiter)
-						   return this.getKeysCombination(combination)
+						   for k, tmpHit in tmpArr {
+						   		tmpHit := "Release " . tmpHit 
+						   		tmpOutArr.Push(this.changeHitToKey(tmpHit))
+						   }
+						    return this.arrayJoin(tmpOutArr,"")
+						   ;combination := this.arrayJoin(tmpOutArr,this.combinationDelimiter)
+						   ;return this.getKeysCombination(combination)
 					}
 					
 					
 					; if this is key with which has to be hold: Hold BL
+					; this becomes: {
 					else if(InStr(hitToChange,"Hold") AND this.matchHit(hitToChange,hit)){
 						   this.addNeedsRelease(this.clearKey(key))
 						   ; Msgbox % this.clearKey(key)
@@ -235,22 +245,23 @@ class Combo {
 		
 		; change things like HP+HK (b+x) => {b down}{x down}{b up}{x up}
 	    ; which works like push 2 keys together
-		 getKeysCombination(combination){
-		    delim := this.combinationDelimiter
-	    	if(InStr(combination, delim)){
-				outArr := StrSplit(combination, delim)
-				outStrDown := ""
-				outStrUp := ""
-				for key, val in outArr {
-				    val := this.clearKey(val)
-					outStrDown := outStrDown . "{" . val . " down}"
-					outStrUp := outStrUp . "{" . val . " up}"
-				}
-				return outStrDown . outStrUp 
-			}
-			; nothing changes, return original string
-			return combination
-		 }
+	    ; Unused recently
+		; getKeysCombination(combination){
+		;    delim := this.combinationDelimiter
+	    ; 	 if(InStr(combination, delim)){
+	    ;		outArr := StrSplit(combination, delim)
+		;		outStrDown := ""
+		;		outStrUp := ""
+		;		for key, val in outArr {
+		;		    val := this.clearKey(val)
+		;			outStrDown := outStrDown . "{" . val . " down}"
+		;			outStrUp := outStrUp . "{" . val . " up}"
+		;		}
+		;		return outStrDown . outStrUp 
+		;	}
+		;	; nothing changes, return original string
+		;	return combination
+		; }
 	
 		
 		;;;;;;; keys that need to be released if they were not ;;;;;;;;;;
